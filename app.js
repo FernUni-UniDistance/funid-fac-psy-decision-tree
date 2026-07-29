@@ -95,7 +95,6 @@ const tree = {
     answers: [
       { label: "Metrische abhängige Variable", next: "metricDependentVariables" },
       { label: "Ordinale abhängige Variable", next: "ordinalGroups" },
-      { label: "Kategoriale abhängige Variable", next: "categoricalDesign" },
       { label: "Wiederholte oder geclusterte Beobachtungen", next: "mixedModelOutcome" },
       { label: "Varianzen vergleichen", next: "varianceComparison" }
     ]
@@ -460,7 +459,7 @@ const results = {
     assumptions: ["Zweistufige kategoriale Variable", "Theoretisch erwarteter Anteil definiert", "Unabhängige Beobachtungen", "Feste Anzahl von Versuchen oder Fällen"]
   },
   chiSquareGoodness: {
-    title: "Pearson-Chi-Quadrat-Anpassungstest",
+    title: "Chi-Quadrat-Test (eindimensionaler)",
     summary: "Prüft, ob die empirische Häufigkeitsverteilung einer mehrstufigen kategorialen Variable zu einer theoretisch erwarteten Verteilung passt.",
     assumptions: ["Mehrstufige kategoriale Variable", "Erwartete Häufigkeiten oder Anteile definiert", "Unabhängige Beobachtungen", "Ausreichend erwartete Häufigkeiten je Kategorie"]
   },
@@ -780,7 +779,6 @@ const languagePacks = {
         answers: [
           { label: "Metric dependent variable", next: "metricDependentVariables" },
           { label: "Ordinal dependent variable", next: "ordinalGroups" },
-          { label: "Categorical dependent variable", next: "categoricalDesign" },
           { label: "Repeated or clustered observations", next: "mixedModelOutcome" },
           { label: "Compare variances", next: "varianceComparison" }
         ]
@@ -1011,7 +1009,7 @@ const languagePacks = {
       fisher: { title: "Fisher's exact test", summary: "Tests associations in small 2x2 tables when chi-square assumptions are not met.", assumptions: ["Dichotomous categorical variables", "Independent observations", "Small expected counts"] },
       mcnemar: { title: "McNemar test", summary: "Compares two paired dichotomous measurements, such as pre-post categories.", assumptions: ["Two paired dichotomous measurements", "Paired data", "Discordant pairs are relevant"] },
       binomialTest: { title: "Binomial test", summary: "Tests whether the empirical frequency or proportion of a two-level variable differs from a theoretically expected probability.", assumptions: ["Two-level categorical variable", "Theoretically expected proportion is defined", "Independent observations", "Fixed number of trials or cases"] },
-      chiSquareGoodness: { title: "Pearson chi-square goodness-of-fit test", summary: "Tests whether the empirical frequency distribution of a multilevel categorical variable matches a theoretically expected distribution.", assumptions: ["Multilevel categorical variable", "Expected frequencies or proportions are defined", "Independent observations", "Sufficient expected counts per category"] },
+      chiSquareGoodness: { title: "Pearson chi-square (one-dimensional)", summary: "Tests whether the empirical frequency distribution of a multilevel categorical variable matches a theoretically expected distribution.", assumptions: ["Multilevel categorical variable", "Expected frequencies or proportions are defined", "Independent observations", "Sufficient expected counts per category"] },
       linearRegression: { title: "Linear regression", summary: "Models a metric outcome variable using one or more predictors; without a suitable design, it does not provide evidence of causality.", assumptions: ["Metric outcome variable", "Linear relationships", "Independent residuals", "Homoscedasticity and residual diagnostics", "Prediction or association, not causality by itself"] },
       logisticRegression: { title: "Binary logistic regression", summary: "Models the probability of a dichotomous outcome variable.", assumptions: ["Dichotomous outcome variable", "Independent observations", "No strong multicollinearity", "Sufficient number of events"] },
       multinomialRegression: { title: "Multinomial logistic regression", summary: "Models a categorical outcome variable with more than two categories.", assumptions: ["Multicategory categorical outcome", "Independent observations", "Meaningful reference category"] },
