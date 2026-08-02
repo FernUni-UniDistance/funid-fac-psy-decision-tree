@@ -10,7 +10,7 @@ window.localizedProcedurePacks = {
       jamovi: "Analysen > Regression > Korrelationsmatrix\nVerschieben Sie die Variablen in Variablen.\nWählen Sie Kendall's Tau für ordinale oder monotone Zusammenhänge, besonders bei kleinen Stichproben oder vielen Bindungen."
     },
     chiSquareAssociation: {
-      jamovi: "Analysen > Häufigkeiten > Kontingenztabellen > Unabhängige Stichproben\nLegen Sie eine kategoriale Variable in Zeilen und die andere in Spalten.\nAktivieren Sie den Chi-Quadrat-Test und erwartete Häufigkeiten."
+      jamovi: "Analysen > Häufigkeiten > Kontingenztabellen > Unabhängige Stichproben\nLegen Sie eine kategoriale Variable in Zeilen und die andere in Spalten.\nAktivieren Sie den Chi-Quadrat-Test und erwartete Häufigkeiten. Fordern Sie für die Post-hoc-Interpretation standardisierte Pearson-Residuen an und prüfen Sie, welche Zellen am stärksten zum Zusammenhang beitragen."
     },
     logLinearModel: {
       jamovi: "Analysen > Häufigkeiten > Log-lineares Modell\nFügen Sie die nominalen Variablen hinzu, die die mehrwegige Kontingenztabelle definieren.\nVergleichen Sie Modelle mit und ohne Interaktionsterme, um zu prüfen, welche Zusammenhänge benötigt werden."
@@ -43,10 +43,10 @@ window.localizedProcedurePacks = {
       jamovi: "Analysen > T-Tests > t-Test für unabhängige Stichproben\nLegen Sie die Zielvariable in Abhängige Variablen und die Gruppenvariable in Gruppierungsvariable.\nAktivieren Sie Mann-Whitney U unter den nichtparametrischen Tests."
     },
     pairedT: {
-      jamovi: "Analysen > T-Tests > t-Test für verbundene Stichproben\nFügen Sie die zwei verbundenen Variablen als gepaarte Zeile hinzu.\nAktivieren Sie Deskriptivstatistiken und die Normalitätsprüfung der Differenzen."
+      jamovi: "Analysen > T-Tests > t-Test für abhängige Stichproben\nFügen Sie die zwei verbundenen Variablen als gepaarte Zeile hinzu.\nAktivieren Sie Deskriptivstatistiken und die Normalitätsprüfung der Differenzen."
     },
     wilcoxon: {
-      jamovi: "Analysen > T-Tests > t-Test für verbundene Stichproben\nFügen Sie die zwei verbundenen Variablen als gepaarte Zeile hinzu.\nAktivieren Sie den Wilcoxon-Vorzeichen-Rang-Test unter den nichtparametrischen Tests."
+      jamovi: "Analysen > T-Tests > t-Test für abhängige Stichproben\nFügen Sie die zwei verbundenen Variablen als gepaarte Zeile hinzu.\nAktivieren Sie den Wilcoxon-Vorzeichen-Rang-Test unter den nichtparametrischen Tests."
     },
     anova: {
       jamovi: "Analysen > ANOVA > ANOVA\nLegen Sie die metrische Zielvariable in Abhängige Variable und den Faktor in Fester Faktor.\nAktivieren Sie Annahmenprüfungen und bei Bedarf Post-hoc-Tests."
@@ -159,7 +159,7 @@ window.localizedProcedurePacks = {
       jamovi: "Analyses > Régression > Matrice de corrélation\nPlacez les variables dans Variables.\nSélectionnez le tau de Kendall pour des variables ordinales ou des relations monotones, surtout avec de petits échantillons ou de nombreux ex aequo."
     },
     chiSquareAssociation: {
-      jamovi: "Analyses > Fréquences > Tableaux de contingence > Échantillons indépendants\nPlacez une variable catégorielle dans Lignes et l'autre dans Colonnes.\nActivez le test du khi carré et les effectifs attendus."
+      jamovi: "Analyses > Fréquences > Tableaux de contingence > Échantillons indépendants\nPlacez une variable catégorielle dans Lignes et l'autre dans Colonnes.\nActivez le test du khi carré et les effectifs attendus. Pour l'interprétation post-hoc, demandez les résidus de Pearson standardisés et examinez quelles cellules contribuent le plus à l'association."
     },
     logLinearModel: {
       jamovi: "Analyses > Fréquences > Modèle log-linéaire\nAjoutez les variables nominales qui définissent le tableau de contingence à plusieurs entrées.\nComparez les modèles avec et sans termes d'interaction pour identifier les associations nécessaires."
@@ -308,7 +308,7 @@ window.localizedProcedurePacks = {
       jamovi: "Análisis > Regresión > Matriz de correlaciones\nMueva las variables a Variables.\nSeleccione tau de Kendall para variables ordinales o relaciones monótonas, especialmente con muestras pequeñas o muchos empates."
     },
     chiSquareAssociation: {
-      jamovi: "Análisis > Frecuencias > Tablas de contingencia > Muestras independientes\nColoque una variable categórica en Filas y la otra en Columnas.\nActive la prueba chi-cuadrado y las frecuencias esperadas."
+      jamovi: "Análisis > Frecuencias > Tablas de contingencia > Muestras independientes\nColoque una variable categórica en Filas y la otra en Columnas.\nActive la prueba chi-cuadrado y las frecuencias esperadas. Para la interpretación post hoc, solicite los residuos de Pearson estandarizados y examine qué celdas contribuyen más a la asociación."
     },
     logLinearModel: {
       jamovi: "Análisis > Frecuencias > Modelo log-lineal\nAñada las variables nominales que definen la tabla de contingencia multidimensional.\nCompare modelos con y sin términos de interacción para identificar qué asociaciones son necesarias."
@@ -509,7 +509,7 @@ window.localizedProcedurePacks.it = {
     jamovi: "Analisi > Regressione > Matrice di correlazione\nSposta le variabili in Variabili.\nSeleziona il tau di Kendall per variabili ordinali o relazioni monotone, specialmente con campioni piccoli o molti pareggi."
   },
   chiSquareAssociation: {
-    jamovi: "Analisi > Frequenze > Tabelle di contingenza > Campioni indipendenti\nInserisci una variabile categoriale in Righe e l'altra in Colonne.\nAttiva il test chi-quadrato e le frequenze attese."
+    jamovi: "Analisi > Frequenze > Tabelle di contingenza > Campioni indipendenti\nInserisci una variabile categoriale in Righe e l'altra in Colonne.\nAttiva il test chi-quadrato e le frequenze attese. Per l'interpretazione post hoc, richiedi i residui di Pearson standardizzati ed esamina quali celle contribuiscono maggiormente all'associazione."
   },
   logLinearModel: {
     jamovi: "Analisi > Frequenze > Modello log-lineare\nAggiungi le variabili nominali che definiscono la tabella di contingenza multidimensionale.\nConfronta modelli con e senza termini di interazione per identificare quali associazioni sono necessarie."

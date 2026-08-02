@@ -364,7 +364,7 @@ const results = {
     assumptions: ["Zwei unabhängige Gruppen", "Mindestens ordinale Zielvariable", "Ähnliche Verteilungsform bei Lageinterpretation"]
   },
   pairedT: {
-    title: "t-Test für verbundene Stichproben",
+    title: "t-Test für abhängige Stichproben",
     summary: "Vergleicht zwei verbundene Mittelwerte, zum Beispiel Vorher-Nachher-Messungen.",
     assumptions: ["Zwei verbundene Messungen", "Metrische Differenzwerte", "Annähernde Normalverteilung der Differenzen"]
   },
@@ -1473,7 +1473,7 @@ const procedureCatalog = {
     r: "cor.test(data$x, data$y, method = \"kendall\", exact = FALSE)"
   },
   chiSquareAssociation: {
-    jamovi: "Analyses > Frequencies > Contingency Tables > Independent Samples\nPut one categorical variable in Rows and the other in Columns.\nEnable Chi-square test and expected counts.",
+    jamovi: "Analyses > Frequencies > Contingency Tables > Independent Samples\nPut one categorical variable in Rows and the other in Columns.\nEnable the chi-square test and expected counts. For post-hoc interpretation, request standardized Pearson residuals and inspect which cells contribute most to the association.",
     r: "tab <- table(data$group, data$outcome)\nchisq.test(tab)"
   },
   logLinearModel: {
@@ -1808,7 +1808,7 @@ const procedureScreenshots = {
   },
   chiSquareAssociation: {
     jamovi: {
-      en: "assets/jamovi/chiSquareAssociation_ENG.png"
+      en: "assets/jamovi/chiSquareAssociation_ENG.png?v=20260802-posthoc-reporting"
     }
   },
   logLinearModel: {
