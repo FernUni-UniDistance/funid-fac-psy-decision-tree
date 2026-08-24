@@ -1,0 +1,13 @@
+Quality domain,Current evidence,Status,Publication evidence to archive
+Decision logic,"Explicit node-answer-result links and reconstructed search paths","Implemented; ongoing review","Machine-readable path list and independently checked scenarios"
+Assumptions,"243-row English review table revised and approved; expanded and translated","Reviewed for current snapshot","Dated reviewed CSV, sources, reviewer record, version hash"
+Language parity,"Shared IDs across EN/DE/FR/ES/IT","Implemented; polishing ongoing","Automated missing-key report and native-speaker review"
+jamovi procedures,"Iterative checking against installed interfaces and outputs","Broadly implemented; version-sensitive","jamovi/module versions, verified OMV and screenshot inventory"
+Screenshots,"Filename-to-result mapping","Incomplete coverage","Automated orphan/missing/multiple-match report"
+Datasets,"Endpoint-linked CSVs iteratively tested and revised","Implemented for most routes","Data dictionary, expected output, automated validation script"
+R workflow,"Install checks, purposes, and code in one R Markdown project","Implemented","Clean render log, sessionInfo, lockfile, archived output"
+Reporting,"Endpoint APA-style scaffolds","Implemented","Review against APA/JARS and specialist guidance"
+Effect sizes,"Endpoint measure and interpretation note","Implemented; conventions vary","Source for thresholds and explicit no-universal-threshold warnings"
+Accessibility,"Responsive interface, focus states, keyboard controls, modal details","Implemented; formal audit pending","Automated scan, keyboard protocol, browser matrix"
+User evaluation,"Iterative author testing and informal feedback","Formative only","Preregistered task accuracy and usability study"
+Versioning,"GitHub source, beta label, last update","Implemented","Tagged release, DOI, changelog, license, deployment record"

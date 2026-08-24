@@ -1,3 +1,26 @@
 .DS_Store
 .Rhistory
 .Rproj.user
+.Rapp.history
+*.omv
+*.pyc
+__pycache__/
+
+# Local working and generated media directories
+SwissRN/
+Teaching days/
+promo/
+snapshots/
+tmp/
+output/
+
+# Local previews and rendered analysis output
+assumptions-home.png
+tree-desktop.png
+r-markdown-project/decision-tree-analyses.html
+
+# Superseded review drafts and local notes
+data/examples/R_codes.R
+docs/assumptions-popover-draft*
+docs/assumptions-review-table.csv
+docs/assumptions-review-table.xlsx

@@ -1,0 +1,12 @@
+Analysis family,Main decision criteria,Representative recommendations
+Associations,"Variable number and scale, linearity/monotonicity, independence","Pearson, Spearman, Kendall, chi-square independence, log-linear model"
+One-sample location and variance,"Outcome scale, known population SD, distribution/symmetry, hypothesized variance","One-sample z, t, Wilcoxon; chi-square variance"
+Two-sample and paired comparisons,"Independence/pairing, outcome scale, distribution, target","Independent/paired t, Mann-Whitney U, Wilcoxon signed-rank, F variance"
+Frequencies and proportions,"Theoretical/empirical distribution, independence, expected counts, pairing","Binomial, one-dimensional Pearson chi-square, chi-square independence, Fisher, McNemar"
+ANOVA and covariance,"Factors, repeated observations, covariates, multiple outcomes, assumptions","One-way/factorial/repeated ANOVA, aligned-rank alternatives, ANCOVA, MANOVA, MANCOVA"
+Regression and classification,"Outcome scale, predictors, prediction/explanation, clustering","Linear, binary logistic, multinomial logistic regression; discriminant analysis"
+Mixed models,"Outcome distribution, nesting/clustering, random effects","Linear, generalized linear, and ordinal mixed models"
+Latent and causal models,"Observed/latent variables, exploratory/confirmatory aim, theoretical direction","Path analysis/mediation, CFA, SEM"
+Exploratory structure,"Correlation or distance input, reduction/grouping/representation goal","EFA, PCA, cluster analysis, MDS, network analysis"
+Machine learning,"Known outcome, regression/classification, validation and interpretability","Decision trees, random forests, kNN, naive Bayes"
+Meta-analysis,"Available study summaries, fixed/random effects, moderators, small-study effects","Odds ratios, correlations, mean differences, effect sizes, proportions, subgroup/meta-regression/bias diagnostics"
