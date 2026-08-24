@@ -24,3 +24,14 @@ data/examples/R_codes.R
 docs/assumptions-popover-draft*
 docs/assumptions-review-table.csv
 docs/assumptions-review-table.xlsx
+
+# Local manuscript and publication working files
+paper/
+
+# Local decision-tree diagram and PDF generators
+tools/export-decision-paths.mjs
+tools/generate-classic-decision-tree-pdfs.py
+tools/generate-classic-tree-overview.mjs
+tools/generate-decision-path-pdfs.py
+tools/generate-horizontal-tree-overview.mjs
+tools/generate-tree-schematic.mjs
