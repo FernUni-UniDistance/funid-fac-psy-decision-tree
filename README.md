@@ -2,7 +2,7 @@
 
 An interactive, multilingual decision-support tool for selecting common statistical analyses and connecting them to assumptions, example data, jamovi procedures, R code, effect sizes, and scientific reporting.
 
-**Live application:** <https://dariho.github.io/decision-tree/>
+**Live application:** <https://statistical-decision-tree.unidistance.ch/>
 
 > **Development status:** Beta. The tool is intended for education and initial methodological orientation. It does not replace statistical consultation, study-design expertise, diagnostic evaluation, or subject-specific literature.
 
