@@ -2330,6 +2330,22 @@ const state = {
   procedureTool: "jamovi"
 };
 
+const conceptContextByNode = {
+  associationScale: ["variableTypes"],
+  comparisonOutcome: ["variableTypes", "variableRoles"],
+  causalModelVariables: ["variableRoles"],
+  predictionOutcome: ["variableRoles", "variableTypes"],
+  categoricalDesign: ["variableTypes"],
+  metricDependentVariables: ["variableRoles"],
+  mixedModelOutcome: ["variableTypes"],
+  singleMetricCovariates: ["covariate"],
+  multivariateCovariates: ["covariate"],
+  metricGroups: ["pairedData"],
+  ordinalGroups: ["pairedData"],
+  twoIndependentNormal: ["pairedData"],
+  twoPairedNormal: ["pairedData"]
+};
+
 const assumptionDialogCopy = {
   de: {
     kicker: "Voraussetzung",
@@ -2374,6 +2390,7 @@ const elements = {
   methodPreview: document.querySelector("#methodPreview"),
   questionText: document.querySelector("#questionText"),
   questionHint: document.querySelector("#questionHint"),
+  questionConceptLinks: document.querySelector("#questionConceptLinks"),
   questionArea: document.querySelector("#questionArea"),
   answers: document.querySelector("#answers"),
   historyList: document.querySelector("#historyList"),
@@ -2394,6 +2411,7 @@ const elements = {
   clusterGuideList: null,
   effectSizeSection: null,
   effectSizeHeading: null,
+  effectSizeHeadingRow: null,
   effectSizeList: null,
   datasetSection: null,
   datasetHeading: null,
@@ -2417,6 +2435,16 @@ const elements = {
   searchInput: document.querySelector("#searchInput"),
   searchResults: document.querySelector("#searchResults"),
   searchEmpty: document.querySelector("#searchEmpty"),
+  conceptsButton: document.querySelector("#conceptsButton"),
+  conceptsDialog: document.querySelector("#conceptsDialog"),
+  conceptsKicker: document.querySelector("#conceptsKicker"),
+  conceptsTitle: document.querySelector("#conceptsTitle"),
+  conceptsIntro: document.querySelector("#conceptsIntro"),
+  conceptsSearchLabel: document.querySelector("#conceptsSearchLabel"),
+  conceptsSearch: document.querySelector("#conceptsSearch"),
+  conceptsList: document.querySelector("#conceptsList"),
+  conceptsEmpty: document.querySelector("#conceptsEmpty"),
+  closeConceptsButton: document.querySelector("#closeConceptsButton"),
   helpButton: document.querySelector("#helpButton"),
   videoGuideButton: document.querySelector("#videoGuideButton"),
   videoInvite: document.querySelector("#videoInvite"),
@@ -2448,12 +2476,17 @@ function getPack() {
   return languagePacks[state.language] || languagePacks.de;
 }
 
+function getConceptPack() {
+  return window.conceptPacks?.[state.language] || window.conceptPacks.en;
+}
+
 function getAssumptionDialogCopy() {
   return assumptionDialogCopy[state.language] || assumptionDialogCopy.en;
 }
 
 function applyStaticText() {
   const pack = getPack();
+  const conceptUi = getConceptPack().ui;
   const assumptionCopy = getAssumptionDialogCopy();
   document.documentElement.lang = pack.lang;
   document.title = pack.ui.appTitle;
@@ -2466,6 +2499,17 @@ function applyStaticText() {
   elements.closeSearchButton.setAttribute("aria-label", pack.ui.closeSearch);
   elements.closeSearchButton.title = pack.ui.closeSearch;
   elements.searchInput.placeholder = pack.ui.searchPlaceholder;
+  elements.conceptsButton.querySelector("span").textContent = conceptUi.button;
+  elements.conceptsButton.setAttribute("aria-label", conceptUi.title);
+  elements.conceptsButton.title = conceptUi.title;
+  elements.conceptsKicker.textContent = conceptUi.kicker;
+  elements.conceptsTitle.textContent = conceptUi.title;
+  elements.conceptsIntro.textContent = conceptUi.intro;
+  elements.conceptsSearchLabel.textContent = conceptUi.search;
+  elements.conceptsSearch.placeholder = conceptUi.searchPlaceholder;
+  elements.conceptsEmpty.textContent = conceptUi.empty;
+  elements.closeConceptsButton.setAttribute("aria-label", conceptUi.close);
+  elements.closeConceptsButton.title = conceptUi.close;
   elements.helpButton.setAttribute("aria-label", pack.ui.helpTitle);
   elements.helpButton.title = pack.ui.helpTitle;
   elements.videoGuideButton.setAttribute("aria-label", pack.ui.videoGuideTitle);
@@ -2501,6 +2545,9 @@ function render() {
   elements.questionArea.textContent = node.area;
   elements.questionText.textContent = node.question;
   elements.questionHint.textContent = node.hint;
+  const concepts = conceptContextByNode[state.currentNode] || [];
+  elements.questionConceptLinks.hidden = concepts.length === 0;
+  elements.questionConceptLinks.replaceChildren(...concepts.map((id) => createConceptLink(id)));
   elements.stepLabel.textContent = `${pack.ui.questionStep} ${state.history.length + 1}`;
   elements.modeLabel.textContent = node.step;
   updateProgressDisplay(pack, false);
@@ -2740,17 +2787,21 @@ function renderDatasetDownload(resultId, pack) {
 function ensureEffectSizeElements() {
   if (elements.effectSizeSection) return;
   const section = document.createElement("section");
+  const headingRow = document.createElement("div");
   const heading = document.createElement("h2");
   const list = document.createElement("div");
   section.className = "effect-size-section apa-section";
   section.id = "effectSizeSection";
+  headingRow.className = "concept-heading-row";
   heading.id = "effectSizeHeading";
   list.className = "apa-list";
   list.id = "effectSizeList";
-  section.append(heading, list);
+  headingRow.append(heading);
+  section.append(headingRow, list);
   elements.apaSection.before(section);
   elements.effectSizeSection = section;
   elements.effectSizeHeading = heading;
+  elements.effectSizeHeadingRow = headingRow;
   elements.effectSizeList = list;
 }
 
@@ -2763,6 +2814,7 @@ function renderEffectSize(resultId, pack) {
   if (!definition) return;
 
   elements.effectSizeHeading.textContent = labels.heading;
+  elements.effectSizeHeadingRow.replaceChildren(elements.effectSizeHeading, createConceptLink("effectSize", true));
   elements.effectSizeList.replaceChildren(
     createApaReportItem(labels.measureLabel, definition.measure),
     createApaReportItem(labels.rangeLabel, labels.ranges[definition.rangeType] || ""),
@@ -2898,6 +2950,79 @@ function normalizeSearchText(value) {
     .toLocaleLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "");
+}
+
+function createConceptLink(id, compact = false) {
+  const pack = getConceptPack();
+  const button = document.createElement("button");
+  const mark = document.createElement("span");
+  button.className = `concept-link${compact ? " compact" : ""}`;
+  button.type = "button";
+  button.setAttribute("aria-haspopup", "dialog");
+  button.setAttribute("aria-label", `${pack.ui.about}: ${pack.entries[id].title}`);
+  button.title = `${pack.ui.about}: ${pack.entries[id].title}`;
+  mark.className = "concept-link-mark";
+  mark.setAttribute("aria-hidden", "true");
+  mark.textContent = "?";
+  button.append(mark);
+  if (!compact) {
+    const label = document.createElement("span");
+    label.textContent = pack.entries[id].title;
+    button.append(label);
+  }
+  button.addEventListener("click", () => openConcepts(id));
+  return button;
+}
+
+function createConceptExample(label, text) {
+  const section = document.createElement("section");
+  const heading = document.createElement("h3");
+  const copy = document.createElement("p");
+  section.className = "concept-example";
+  heading.textContent = label;
+  copy.textContent = text;
+  section.append(heading, copy);
+  return section;
+}
+
+function renderConcepts(query = "", selectedId = null) {
+  const pack = getConceptPack();
+  const normalizedQuery = normalizeSearchText(query.trim());
+  const matches = Object.entries(pack.entries).filter(([, entry]) =>
+    normalizeSearchText(`${entry.title} ${entry.definition} ${entry.psychology} ${entry.sport}`).includes(normalizedQuery)
+  );
+  elements.conceptsList.replaceChildren(
+    ...matches.map(([id, entry], index) => {
+      const details = document.createElement("details");
+      const summary = document.createElement("summary");
+      const definition = document.createElement("p");
+      details.dataset.conceptId = id;
+      details.open = selectedId ? id === selectedId : index === 0;
+      summary.textContent = entry.title;
+      definition.className = "concept-definition";
+      definition.textContent = entry.definition;
+      details.append(
+        summary,
+        definition,
+        createConceptExample(pack.ui.psychology, entry.psychology),
+        createConceptExample(pack.ui.sport, entry.sport)
+      );
+      return details;
+    })
+  );
+  elements.conceptsEmpty.hidden = matches.length > 0;
+}
+
+function openConcepts(selectedId = null) {
+  if (!elements.videoInvite.hidden) dismissVideoInvite();
+  elements.conceptsSearch.value = "";
+  renderConcepts("", selectedId);
+  elements.conceptsDialog.showModal();
+  if (selectedId) {
+    elements.conceptsList.querySelector(`[data-concept-id="${selectedId}"] summary`)?.focus();
+  } else {
+    elements.conceptsSearch.focus();
+  }
 }
 
 function getSearchMatches(query) {
@@ -3097,6 +3222,9 @@ elements.resetButton.addEventListener("click", resetTree);
 elements.copyButton.addEventListener("click", copyResult);
 elements.exploreButton.addEventListener("click", showAlternatives);
 elements.searchButton.addEventListener("click", openSearch);
+elements.conceptsButton.addEventListener("click", () => openConcepts());
+elements.closeConceptsButton.addEventListener("click", () => elements.conceptsDialog.close());
+elements.conceptsSearch.addEventListener("input", (event) => renderConcepts(event.target.value));
 elements.closeSearchButton.addEventListener("click", () => elements.searchDialog.close());
 elements.searchInput.addEventListener("input", renderSearchResults);
 elements.searchInput.addEventListener("keydown", handleSearchKeydown);
