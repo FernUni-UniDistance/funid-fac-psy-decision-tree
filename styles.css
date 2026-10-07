@@ -1298,6 +1298,40 @@ button {
   box-shadow: var(--shadow);
 }
 
+.video-invite {
+  position: fixed;
+  right: 20px;
+  bottom: max(20px, env(safe-area-inset-bottom));
+  z-index: 6;
+  width: min(320px, calc(100vw - 32px));
+  padding: 18px;
+  border: 1px solid var(--teal);
+  border-radius: var(--radius);
+  background: var(--surface-raised);
+  box-shadow: var(--shadow);
+}
+
+.video-invite h2 {
+  margin: 0 34px 14px 0;
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.video-invite-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  min-width: 28px;
+  min-height: 28px;
+  padding: 0;
+}
+
+.video-invite-action {
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 720;
+}
+
 .help-dialog {
   width: min(800px, calc(100vw - 32px));
   max-height: calc(100dvh - 32px);

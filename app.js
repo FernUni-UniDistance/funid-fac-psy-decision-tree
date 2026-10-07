@@ -528,6 +528,9 @@ const languagePacks = {
       videoGuideShort: "Video",
       videoGuideTitle: "Videoanleitung",
       videoLanguageNote: "",
+      videoInviteTitle: "Entdecken Sie, wie das Tool funktioniert",
+      videoInviteAction: "Video ansehen",
+      videoInviteClose: "Videohinweis schließen",
       closeSearch: "Suche schließen",
       closeHelp: "Hilfe schließen",
       back: "Zurück",
@@ -618,6 +621,9 @@ const languagePacks = {
       videoGuideShort: "Video guide",
       videoGuideTitle: "Video guide",
       videoLanguageNote: "",
+      videoInviteTitle: "Discover how to use the tool",
+      videoInviteAction: "Watch video",
+      videoInviteClose: "Dismiss video tip",
       closeSearch: "Close search",
       closeHelp: "Close help",
       back: "Back",
@@ -2413,6 +2419,9 @@ const elements = {
   searchEmpty: document.querySelector("#searchEmpty"),
   helpButton: document.querySelector("#helpButton"),
   videoGuideButton: document.querySelector("#videoGuideButton"),
+  videoInvite: document.querySelector("#videoInvite"),
+  closeVideoInviteButton: document.querySelector("#closeVideoInviteButton"),
+  watchVideoInviteButton: document.querySelector("#watchVideoInviteButton"),
   guideVideo: document.querySelector("#guideVideo"),
   videoLanguageNote: document.querySelector("#videoLanguageNote"),
   helpDialog: document.querySelector("#helpDialog"),
@@ -2461,6 +2470,8 @@ function applyStaticText() {
   elements.helpButton.title = pack.ui.helpTitle;
   elements.videoGuideButton.setAttribute("aria-label", pack.ui.videoGuideTitle);
   elements.videoGuideButton.title = pack.ui.videoGuideTitle;
+  elements.closeVideoInviteButton.setAttribute("aria-label", pack.ui.videoInviteClose);
+  elements.closeVideoInviteButton.title = pack.ui.videoInviteClose;
   elements.videoLanguageNote.textContent = pack.ui.videoLanguageNote || "";
   elements.videoLanguageNote.hidden = !pack.ui.videoLanguageNote;
   elements.closeHelpButton.setAttribute("aria-label", pack.ui.closeHelp);
@@ -2530,6 +2541,7 @@ function render() {
 }
 
 function chooseAnswer(answer, answerIndex) {
+  if (!elements.videoInvite.hidden) dismissVideoInvite();
   state.history.push({
     nodeId: state.currentNode,
     answerIndex
@@ -2966,6 +2978,7 @@ function findPathToResult(resultId) {
 }
 
 function openSearch() {
+  if (!elements.videoInvite.hidden) dismissVideoInvite();
   applyStaticText();
   renderSearchResults();
   elements.searchDialog.showModal();
@@ -3088,6 +3101,7 @@ elements.closeSearchButton.addEventListener("click", () => elements.searchDialog
 elements.searchInput.addEventListener("input", renderSearchResults);
 elements.searchInput.addEventListener("keydown", handleSearchKeydown);
 function openHelpDialog(playVideo = false) {
+  dismissVideoInvite();
   const videoLanguage = ["de", "en", "fr"].includes(state.language) ? state.language : "en";
   if (elements.guideVideo.dataset.language !== videoLanguage) {
     elements.guideVideo.poster = `assets/video/guide-poster-${videoLanguage}.jpg`;
@@ -3099,6 +3113,22 @@ function openHelpDialog(playVideo = false) {
   if (playVideo) elements.guideVideo.play().catch(() => {});
 }
 
+function dismissVideoInvite() {
+  elements.videoInvite.hidden = true;
+  window.sessionStorage.setItem("decisionTreeVideoInviteDismissed", "1");
+}
+
+function showVideoInvite() {
+  if (
+    window.sessionStorage.getItem("decisionTreeVideoInviteDismissed") ||
+    state.currentNode !== "goal" ||
+    document.querySelector("dialog[open]")
+  ) return;
+  elements.videoInvite.hidden = false;
+}
+
+elements.closeVideoInviteButton.addEventListener("click", dismissVideoInvite);
+elements.watchVideoInviteButton.addEventListener("click", () => openHelpDialog(true));
 elements.videoGuideButton.addEventListener("click", () => openHelpDialog(true));
 elements.helpButton.addEventListener("click", () => openHelpDialog());
 elements.closeHelpButton.addEventListener("click", () => elements.helpDialog.close());
@@ -3123,3 +3153,4 @@ elements.matrixCells.forEach((cell) => {
 });
 
 render();
+window.setTimeout(showVideoInvite, 5000);

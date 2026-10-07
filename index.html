@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Entscheidungsbaum statistischer Testverfahren</title>
-    <link rel="stylesheet" href="styles.css?v=20261007-video-guide" />
+    <link rel="stylesheet" href="styles.css?v=20261007-video-invite" />
   </head>
   <body>
     <main class="app-shell">
@@ -270,6 +270,17 @@
       </footer>
     </main>
 
+    <aside class="video-invite" id="videoInvite" aria-labelledby="videoInviteTitle" hidden>
+      <button class="icon-button video-invite-close" id="closeVideoInviteButton" type="button" aria-label="Close video tip" title="Close video tip">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 6l12 12" />
+          <path d="M18 6L6 18" />
+        </svg>
+      </button>
+      <h2 id="videoInviteTitle" data-i18n="videoInviteTitle">Discover how to use the tool</h2>
+      <button class="text-button primary video-invite-action" id="watchVideoInviteButton" type="button" data-i18n="videoInviteAction">Watch video</button>
+    </aside>
+
     <dialog class="search-dialog" id="searchDialog" aria-labelledby="searchTitle">
       <button class="icon-button close-dialog" id="closeSearchButton" type="button" aria-label="Suche schließen" title="Schließen">
         <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -338,11 +349,11 @@
     </dialog>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script src="translations-extra.js?v=20261007-video-guide"></script>
+    <script src="translations-extra.js?v=20261007-video-invite"></script>
     <script src="scenarios.js?v=20260802-posthoc-reporting"></script>
     <script src="procedure-translations.js?v=20260802-posthoc-reporting"></script>
     <script src="apa-reporting.js?v=20260802-posthoc-reporting"></script>
     <script src="assumptions-details.js?v=20260802-posthoc-reporting"></script>
-    <script src="app.js?v=20261007-video-guide"></script>
+    <script src="app.js?v=20261007-video-invite"></script>
   </body>
 </html>
