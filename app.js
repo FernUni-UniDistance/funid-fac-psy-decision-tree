@@ -525,6 +525,9 @@ const languagePacks = {
       searchPlaceholder: "z. B. ANOVA, Regression, Wilcoxon ...",
       searchEmpty: "Kein passender Test gefunden.",
       helpShort: "Hilfe",
+      videoGuideShort: "Video",
+      videoGuideTitle: "Videoanleitung",
+      videoLanguageNote: "",
       closeSearch: "Suche schließen",
       closeHelp: "Hilfe schließen",
       back: "Zurück",
@@ -612,6 +615,9 @@ const languagePacks = {
       searchPlaceholder: "e.g., ANOVA, regression, Wilcoxon ...",
       searchEmpty: "No matching test found.",
       helpShort: "Help",
+      videoGuideShort: "Video guide",
+      videoGuideTitle: "Video guide",
+      videoLanguageNote: "",
       closeSearch: "Close search",
       closeHelp: "Close help",
       back: "Back",
@@ -2406,6 +2412,9 @@ const elements = {
   searchResults: document.querySelector("#searchResults"),
   searchEmpty: document.querySelector("#searchEmpty"),
   helpButton: document.querySelector("#helpButton"),
+  videoGuideButton: document.querySelector("#videoGuideButton"),
+  guideVideo: document.querySelector("#guideVideo"),
+  videoLanguageNote: document.querySelector("#videoLanguageNote"),
   helpDialog: document.querySelector("#helpDialog"),
   closeHelpButton: document.querySelector("#closeHelpButton"),
   assumptionDialog: document.querySelector("#assumptionDialog"),
@@ -2450,6 +2459,10 @@ function applyStaticText() {
   elements.searchInput.placeholder = pack.ui.searchPlaceholder;
   elements.helpButton.setAttribute("aria-label", pack.ui.helpTitle);
   elements.helpButton.title = pack.ui.helpTitle;
+  elements.videoGuideButton.setAttribute("aria-label", pack.ui.videoGuideTitle);
+  elements.videoGuideButton.title = pack.ui.videoGuideTitle;
+  elements.videoLanguageNote.textContent = pack.ui.videoLanguageNote || "";
+  elements.videoLanguageNote.hidden = !pack.ui.videoLanguageNote;
   elements.closeHelpButton.setAttribute("aria-label", pack.ui.closeHelp);
   elements.closeHelpButton.title = pack.ui.closeHelp;
   elements.closeAssumptionButton.setAttribute("aria-label", assumptionCopy.close);
@@ -3074,8 +3087,22 @@ elements.searchButton.addEventListener("click", openSearch);
 elements.closeSearchButton.addEventListener("click", () => elements.searchDialog.close());
 elements.searchInput.addEventListener("input", renderSearchResults);
 elements.searchInput.addEventListener("keydown", handleSearchKeydown);
-elements.helpButton.addEventListener("click", () => elements.helpDialog.showModal());
+function openHelpDialog(playVideo = false) {
+  const videoLanguage = ["de", "en", "fr"].includes(state.language) ? state.language : "en";
+  if (elements.guideVideo.dataset.language !== videoLanguage) {
+    elements.guideVideo.poster = `assets/video/guide-poster-${videoLanguage}.jpg`;
+    elements.guideVideo.src = `assets/video/guide-${videoLanguage}.mp4`;
+    elements.guideVideo.dataset.language = videoLanguage;
+    elements.guideVideo.load();
+  }
+  elements.helpDialog.showModal();
+  if (playVideo) elements.guideVideo.play().catch(() => {});
+}
+
+elements.videoGuideButton.addEventListener("click", () => openHelpDialog(true));
+elements.helpButton.addEventListener("click", () => openHelpDialog());
 elements.closeHelpButton.addEventListener("click", () => elements.helpDialog.close());
+elements.helpDialog.addEventListener("close", () => elements.guideVideo.pause());
 elements.closeAssumptionButton.addEventListener("click", closeAssumptionDialog);
 elements.assumptionDialog.addEventListener("click", (event) => {
   const dialogBox = elements.assumptionDialog.getBoundingClientRect();

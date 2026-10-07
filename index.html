@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Entscheidungsbaum statistischer Testverfahren</title>
-    <link rel="stylesheet" href="styles.css?v=20260802-posthoc-reporting" />
+    <link rel="stylesheet" href="styles.css?v=20261007-video-guide" />
   </head>
   <body>
     <main class="app-shell">
@@ -42,6 +42,12 @@
               <path d="M16 16l4 4" />
             </svg>
             <span data-i18n="searchShort">Suchen</span>
+          </button>
+          <button class="icon-button" id="videoGuideButton" type="button" aria-label="Videoanleitung" title="Videoanleitung">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            <span data-i18n="videoGuideShort">Video</span>
           </button>
           <button class="icon-button" id="helpButton" type="button" aria-label="Hilfe öffnen" title="Hilfe">
             <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -260,7 +266,7 @@
           <span data-i18n="footerContact">Fehler oder Verbesserungsvorschläge:</span>
           <a href="mailto:darias.holgado@fernuni.ch">darias.holgado@fernuni.ch</a>
         </span>
-        <span>Beta Version 2.0.0 · Currently under development · Last update: 2026-07-29 15:56 CEST</span>
+        <span>Beta Version 2.0.0 · Currently under development · Last update: 2026-10-07</span>
       </footer>
     </main>
 
@@ -294,6 +300,11 @@
         Pfad links bleibt sichtbar, damit Sie nachvollziehen können, warum ein
         Test vorgeschlagen wird.
       </p>
+      <div class="guide-video-block">
+        <h3 id="videoGuideHeading" data-i18n="videoGuideTitle">Videoanleitung</h3>
+        <video id="guideVideo" controls preload="none" playsinline poster="assets/video/guide-poster-en.jpg" aria-labelledby="videoGuideHeading"></video>
+        <p id="videoLanguageNote" hidden></p>
+      </div>
       <div class="help-columns">
         <section>
           <h3 data-i18n="helpGoodHeading">Gute Eingaben</h3>
@@ -327,11 +338,11 @@
     </dialog>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script src="translations-extra.js?v=20260802-posthoc-reporting"></script>
+    <script src="translations-extra.js?v=20261007-video-guide"></script>
     <script src="scenarios.js?v=20260802-posthoc-reporting"></script>
     <script src="procedure-translations.js?v=20260802-posthoc-reporting"></script>
     <script src="apa-reporting.js?v=20260802-posthoc-reporting"></script>
     <script src="assumptions-details.js?v=20260802-posthoc-reporting"></script>
-    <script src="app.js?v=20260802-posthoc-reporting"></script>
+    <script src="app.js?v=20261007-video-guide"></script>
   </body>
 </html>

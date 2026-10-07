@@ -253,6 +253,11 @@ button {
   transform: none;
 }
 
+#videoGuideButton {
+  border-color: var(--teal);
+  color: var(--teal-strong);
+}
+
 .icon-button:disabled,
 .text-button:disabled {
   color: #5b686a;
@@ -1293,6 +1298,34 @@ button {
   box-shadow: var(--shadow);
 }
 
+.help-dialog {
+  width: min(800px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+}
+
+.guide-video-block {
+  margin-top: 20px;
+}
+
+.guide-video-block h3 {
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+
+.guide-video-block video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #101616;
+  border-radius: var(--radius);
+}
+
+.guide-video-block p {
+  margin: 8px 0 0;
+  font-size: 12px;
+}
+
 .help-dialog::backdrop,
 .search-dialog::backdrop,
 .assumption-dialog::backdrop {
@@ -1466,6 +1499,14 @@ button {
 }
 
 @media (max-width: 1080px) {
+  .topbar {
+    flex-wrap: wrap;
+  }
+
+  .top-actions {
+    margin-left: auto;
+  }
+
   .workspace {
     grid-template-columns: 250px minmax(0, 1fr);
   }
@@ -1525,13 +1566,13 @@ button {
   }
 
   .language-control {
-    grid-column: 1 / 11;
+    grid-column: 1 / 7;
     min-width: 0;
     padding: 0 8px;
   }
 
   .top-actions .icon-button {
-    grid-column: 11 / 13;
+    grid-column: span 2;
     width: 100%;
     padding: 0;
   }
