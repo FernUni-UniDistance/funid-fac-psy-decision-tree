@@ -25,7 +25,7 @@
 <rect class="frame" x="42" y="42" width="4116" height="1996" rx="14"/>
 <text class="title" x="54" y="78">Horizontal Decision Tree Overview</text>
 <text class="subtitle" x="54" y="108">Landscape concept. Start at the root, choose one main route, then scan horizontally through the final recommendations.</text>
-<text class="small" x="3640" y="78">58 terminal recommendations - Beta Version 2.0.0 - Under development</text>
+<text class="small" x="3640" y="78">58 terminal recommendations - Version 1.0</text>
 <rect class="root" x="64" y="1001" width="300" height="144" rx="14"/>
 <text class="meta" x="86" y="1031">Analysis strategy</text>
 <text class="rootText" x="86" y="1063">What do you want to do</text>

@@ -20,8 +20,8 @@
 <rect class="bg" x="0" y="0" width="2828" height="7592"/>
 <rect class="frame" x="32" y="32" width="2764" height="7528" rx="12"/>
 <text class="title" x="64" y="80">Classic Decision Tree Overview</text>
-<text class="subtitle" x="64" y="110">Branching map of the current beta decision tree. Follow the connected nodes from left to right to reach each test or procedure.</text>
-<text class="small" x="2308" y="82">58 terminal recommendations - Beta Version 2.0.0 - Under development</text>
+<text class="subtitle" x="64" y="110">Branching map of the decision tree. Follow the connected nodes from left to right to reach each test or procedure.</text>
+<text class="small" x="2308" y="82">58 terminal recommendations - Version 1.0</text>
 <path class="edge" d="M 344 3850 C 401.5 3850, 401.5 2822, 459 2822" stroke="#67d5c9"/>
 <path class="edge" d="M 739 2822 C 796.5 2822, 796.5 797, 854 797" stroke="#67d5c9"/>
 <path class="edge" d="M 1134 797 C 1191.5 797, 1191.5 354, 1249 354" stroke="#67d5c9"/>

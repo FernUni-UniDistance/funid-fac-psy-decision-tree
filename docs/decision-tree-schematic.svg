@@ -20,8 +20,8 @@
 <rect class="bg" x="0" y="0" width="1800" height="6055"/>
 <rect class="panel" x="36" y="36" width="1728" height="5983" rx="10"/>
 <text class="title" x="50" y="78">Decision Tree Schematic</text>
-<text class="subtitle" x="50" y="108">English overview of the current beta tree. Each row shows how a user reaches a final test or procedure.</text>
-<text class="small" x="1280" y="78">58 terminal recommendations - Beta Version 2.0.0 - Under development</text>
+<text class="subtitle" x="50" y="108">English overview of the decision tree. Each row shows how a user reaches a final test or procedure.</text>
+<text class="small" x="1280" y="78">58 terminal recommendations - Version 1.0</text>
 <rect class="header" x="50" y="155" width="220" height="34" rx="7"/>
 <rect class="header" x="310" y="155" width="910" height="34" rx="7"/>
 <rect class="header" x="1280" y="155" width="460" height="34" rx="7"/>
