@@ -43,6 +43,12 @@ window.conceptPacks = {
         definition: "An effect size describes the magnitude of a difference or association, not just whether a p value is small. Choose a measure appropriate to the analysis and interpret it with its uncertainty and research context.",
         psychology: "Cohen's d expresses a therapy-group difference in standard-deviation units.",
         sport: "A correlation coefficient summarizes the association between training volume and race time."
+      },
+      sidedness: {
+        title: "One- and two-sided tests",
+        definition: "Some tests allow a two-sided alternative (an effect in either direction) or a one-sided alternative (an effect in one specified direction). Justify and choose the direction before examining the results; otherwise use the two-sided option. Do not switch after seeing the data, and report which alternative was used. Not every procedure offers this choice.",
+        psychology: "Two-sided hypothesis: mean anxiety scores differ between mindfulness and control groups. One-sided hypothesis: the mindfulness group has a lower mean anxiety score.",
+        sport: "Two-sided hypothesis: mean jump height differs between two training groups. One-sided hypothesis: group A has higher mean jump height than group B."
       }
     }
   },
@@ -90,6 +96,12 @@ window.conceptPacks = {
         definition: "Eine Effektgröße beschreibt das Ausmaß eines Unterschieds oder Zusammenhangs, nicht nur, ob ein p-Wert klein ist. Wählen Sie ein passendes Maß und interpretieren Sie es mit Unsicherheit und Forschungskontext.",
         psychology: "Cohen's d drückt einen Unterschied zwischen Therapiegruppen in Standardabweichungseinheiten aus.",
         sport: "Ein Korrelationskoeffizient beschreibt den Zusammenhang zwischen Trainingsumfang und Laufzeit."
+      },
+      sidedness: {
+        title: "Einseitige und zweiseitige Tests",
+        definition: "Einige Tests erlauben eine zweiseitige Alternativhypothese (Effekt in einer der beiden Richtungen) oder eine einseitige (Effekt in einer festgelegten Richtung). Begründen und wählen Sie die Richtung vor der Betrachtung der Ergebnisse; andernfalls verwenden Sie die zweiseitige Option. Wechseln Sie nicht nach Sichtung der Daten und geben Sie die gewählte Alternative bei der Ergebnisdarstellung an. Nicht jedes Verfahren bietet diese Wahl.",
+        psychology: "Zweiseitige Hypothese: Die mittleren Angstwerte unterscheiden sich zwischen Achtsamkeits- und Kontrollgruppe. Einseitige Hypothese: Die Achtsamkeitsgruppe hat einen niedrigeren mittleren Angstwert.",
+        sport: "Zweiseitige Hypothese: Die mittlere Sprunghöhe unterscheidet sich zwischen zwei Trainingsgruppen. Einseitige Hypothese: Gruppe A hat eine höhere mittlere Sprunghöhe als Gruppe B."
       }
     }
   },
@@ -137,6 +149,12 @@ window.conceptPacks = {
         definition: "Une taille d'effet décrit l'ampleur d'une différence ou d'une association, et pas seulement si la valeur p est faible. Choisissez une mesure adaptée et interprétez-la avec son incertitude et son contexte scientifique.",
         psychology: "Le d de Cohen exprime une différence entre groupes de thérapie en unités d'écart-type.",
         sport: "Un coefficient de corrélation résume l'association entre volume d'entraînement et temps de course."
+      },
+      sidedness: {
+        title: "Tests unilatéraux et bilatéraux",
+        definition: "Certains tests proposent une hypothèse alternative bilatérale (un effet dans l'un ou l'autre sens) ou unilatérale (un effet dans un sens défini). Justifiez et choisissez ce sens avant d'examiner les résultats; sinon, utilisez l'option bilatérale. Ne changez pas de choix après avoir vu les données et indiquez l'hypothèse retenue dans le compte rendu. Cette option n'existe pas pour toutes les procédures.",
+        psychology: "Hypothèse bilatérale : les scores moyens d'anxiété diffèrent entre les groupes de pleine conscience et témoin. Hypothèse unilatérale : le groupe de pleine conscience a un score moyen d'anxiété plus faible.",
+        sport: "Hypothèse bilatérale : la hauteur moyenne de saut diffère entre deux groupes d'entraînement. Hypothèse unilatérale : le groupe A a une hauteur moyenne de saut supérieure à celle du groupe B."
       }
     }
   },
@@ -184,6 +202,12 @@ window.conceptPacks = {
         definition: "Un tamaño del efecto describe la magnitud de una diferencia o asociación, no solo si el valor p es pequeño. Elija una medida adecuada e interprétela con su incertidumbre y contexto científico.",
         psychology: "La d de Cohen expresa una diferencia entre grupos de terapia en unidades de desviación estándar.",
         sport: "Un coeficiente de correlación resume la asociación entre volumen de entrenamiento y tiempo de carrera."
+      },
+      sidedness: {
+        title: "Pruebas unilaterales y bilaterales",
+        definition: "Algunas pruebas permiten una hipótesis alternativa bilateral (un efecto en cualquiera de las dos direcciones) o unilateral (un efecto en una dirección especificada). Justifique y elija la dirección antes de examinar los resultados; de lo contrario, use la opción bilateral. No cambie la elección después de ver los datos e indique qué alternativa utilizó al informar los resultados. No todos los procedimientos ofrecen esta opción.",
+        psychology: "Hipótesis bilateral: las puntuaciones medias de ansiedad difieren entre los grupos de atención plena y control. Hipótesis unilateral: el grupo de atención plena tiene una puntuación media de ansiedad menor.",
+        sport: "Hipótesis bilateral: la altura media de salto difiere entre dos grupos de entrenamiento. Hipótesis unilateral: el grupo A tiene una altura media de salto mayor que el grupo B."
       }
     }
   },
@@ -231,6 +255,12 @@ window.conceptPacks = {
         definition: "La dimensione dell'effetto descrive l'entità di una differenza o associazione, non soltanto se il valore p è piccolo. Scegli una misura adatta e interpretala considerando incertezza e contesto scientifico.",
         psychology: "La d di Cohen esprime una differenza tra gruppi di terapia in unità di deviazione standard.",
         sport: "Un coefficiente di correlazione riassume l'associazione tra volume di allenamento e tempo di gara."
+      },
+      sidedness: {
+        title: "Test unilaterali e bilaterali",
+        definition: "Alcuni test consentono un'ipotesi alternativa bilaterale (un effetto in una delle due direzioni) o unilaterale (un effetto in una direzione specificata). Giustifica e scegli la direzione prima di esaminare i risultati; altrimenti usa l'opzione bilaterale. Non cambiare scelta dopo aver visto i dati e indica quale alternativa hai usato nel resoconto. Non tutte le procedure offrono questa opzione.",
+        psychology: "Ipotesi bilaterale: i punteggi medi di ansia differiscono tra il gruppo mindfulness e il gruppo di controllo. Ipotesi unilaterale: il gruppo mindfulness ha un punteggio medio di ansia inferiore.",
+        sport: "Ipotesi bilaterale: l'altezza media del salto differisce tra due gruppi di allenamento. Ipotesi unilaterale: il gruppo A ha un'altezza media del salto maggiore del gruppo B."
       }
     }
   }
