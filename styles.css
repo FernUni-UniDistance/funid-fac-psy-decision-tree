@@ -1189,6 +1189,35 @@ button {
   overflow-wrap: anywhere;
 }
 
+.procedure-download,
+.help-resource {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.procedure-download span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.r-project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.procedure-download .dataset-download-link,
+.help-resource .dataset-download-link {
+  max-width: 100%;
+  text-align: center;
+}
+
 .jamovi-screenshot {
   margin: -8px 0 28px;
   position: relative;
@@ -1617,6 +1646,15 @@ button {
   padding: 14px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
+}
+
+.help-resource {
+  margin-top: 20px;
+  padding-top: 16px;
+}
+
+.help-resource h3 {
+  margin: 0;
 }
 
 .search-field {

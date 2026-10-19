@@ -2,7 +2,7 @@
 
 This folder contains an R Markdown companion notebook for the statistical decision tree website.
 
-Open `decision-tree-r.Rproj` in RStudio, then open `decision-tree-analyses.Rmd`.
+Extract the complete ZIP before opening `decision-tree-r.Rproj` in RStudio, then open `decision-tree-analyses.Rmd`.
 
 The notebook reads the prepared example datasets directly from:
 

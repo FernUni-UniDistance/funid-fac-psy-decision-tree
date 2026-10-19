@@ -563,6 +563,10 @@ const languagePacks = {
       datasetHeading: "Beispieldatensatz",
       datasetText: "Laden Sie den vorbereiteten CSV-Datensatz herunter, um diese Analyse in Jamovi oder R nachzuvollziehen.",
       downloadDataset: "Datensatz herunterladen",
+      rProjectContents: "R-Markdown-Notebook und Beispieldatensätze",
+      rProjectHeading: "R-Begleitprojekt",
+      viewRNotebook: "R-Notebook online öffnen (Englisch)",
+      downloadRProject: "R-Projekt herunterladen (.zip)",
       copyResult: "Ergebnis kopieren",
       exploreAlternatives: "Alternativen ansehen",
       orientationLabel: "Orientierung",
@@ -656,6 +660,10 @@ const languagePacks = {
       datasetHeading: "Example dataset",
       datasetText: "Download the prepared CSV dataset to run this analysis in Jamovi or R.",
       downloadDataset: "Download dataset",
+      rProjectContents: "R Markdown notebook and example datasets",
+      rProjectHeading: "R companion project",
+      viewRNotebook: "View R notebook online (English)",
+      downloadRProject: "Download R project (.zip)",
       copyResult: "Copy result",
       exploreAlternatives: "View alternatives",
       orientationLabel: "Orientation",
@@ -2422,6 +2430,7 @@ const elements = {
   apaReportList: document.querySelector("#apaReportList"),
   procedureSelect: document.querySelector("#procedureSelect"),
   procedureOutput: document.querySelector("#procedureOutput"),
+  rProjectDownload: document.querySelector("#rProjectDownload"),
   jamoviScreenshot: document.querySelector("#jamoviScreenshot"),
   jamoviScreenshotImage: document.querySelector("#jamoviScreenshotImage"),
   jamoviScreenshotCaption: document.querySelector("#jamoviScreenshotCaption"),
@@ -2890,6 +2899,7 @@ function renderProcedure(resultId) {
   const procedure = getProcedureText(resultId, pack.lang, state.procedureTool);
   const screenshot = getProcedureScreenshot(resultId, pack.lang);
   elements.procedureOutput.textContent = procedure;
+  elements.rProjectDownload.hidden = state.procedureTool !== "r" || !procedure;
   elements.jamoviScreenshot.hidden = !screenshot;
   if (!screenshot) {
     elements.jamoviScreenshotImage.removeAttribute("src");

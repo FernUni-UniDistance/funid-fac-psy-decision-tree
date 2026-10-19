@@ -519,7 +519,7 @@ Object.assign(window.resultScenarioPacks.de, {
   },
   clusterAnalysis: {
     psychology: "Teilnehmende werden anhand von Stress, Schlaf, sozialer Unterstützung und Stimmung zu ähnlichen Belastungsprofilen gruppiert.",
-    sport: "Athletinnen und Athleten werden anhand von Trainingsumfang, Erholung, Sprintleistung und Verletzungshistorie in Profile eingeteilt."
+    sport: "Athletinnen und Athleten werden anhand von Trainingsumfang, Erholung, Sprintleistung und Schlafdauer in Profile eingeteilt."
   },
   multidimensionalScaling: {
     psychology: "Ähnlichkeitsurteile zu Emotionen werden in einer zweidimensionalen Karte dargestellt, um Nähe und Distanz zwischen Emotionen zu verstehen.",
@@ -542,7 +542,7 @@ Object.assign(window.resultScenarioPacks.en, {
   },
   clusterAnalysis: {
     psychology: "Participants are grouped into similar distress profiles based on stress, sleep, social support, and mood.",
-    sport: "Athletes are grouped into profiles based on training volume, recovery, sprint performance, and injury history."
+    sport: "Athletes are grouped into profiles based on training volume, recovery, sprint performance, and sleep duration."
   },
   multidimensionalScaling: {
     psychology: "Similarity judgements among emotions are represented on a two-dimensional map to understand emotional proximity and distance.",
@@ -565,7 +565,7 @@ Object.assign(window.resultScenarioPacks.fr, {
   },
   clusterAnalysis: {
     psychology: "Les participants sont regroupés en profils de détresse similaires selon le stress, le sommeil, le soutien social et l'humeur.",
-    sport: "Les athlètes sont regroupés en profils selon le volume d'entraînement, la récupération, la performance de sprint et les antécédents de blessure."
+    sport: "Les athlètes sont regroupés en profils selon le volume d'entraînement, la récupération, la performance de sprint et la durée du sommeil."
   },
   multidimensionalScaling: {
     psychology: "Des jugements de similarité entre émotions sont représentés sur une carte à deux dimensions pour comprendre leur proximité.",
@@ -588,7 +588,7 @@ Object.assign(window.resultScenarioPacks.es, {
   },
   clusterAnalysis: {
     psychology: "Los participantes se agrupan en perfiles similares de malestar según estrés, sueño, apoyo social y estado de ánimo.",
-    sport: "Los deportistas se agrupan en perfiles según volumen de entrenamiento, recuperación, rendimiento de sprint e historial de lesiones."
+    sport: "Los deportistas se agrupan en perfiles según volumen de entrenamiento, recuperación, rendimiento de sprint y duración del sueño."
   },
   multidimensionalScaling: {
     psychology: "Juicios de similitud entre emociones se representan en un mapa bidimensional para comprender proximidad y distancia emocional.",
@@ -611,7 +611,7 @@ Object.assign(window.resultScenarioPacks.it, {
   },
   clusterAnalysis: {
     psychology: "I partecipanti vengono raggruppati in profili di disagio simili in base a stress, sonno, supporto sociale e umore.",
-    sport: "Gli atleti vengono raggruppati in profili in base a volume di allenamento, recupero, prestazione nello sprint e storia di infortuni."
+    sport: "Gli atleti vengono raggruppati in profili in base a volume di allenamento, recupero, prestazione nello sprint e durata del sonno."
   },
   multidimensionalScaling: {
     psychology: "Giudizi di similarità tra emozioni vengono rappresentati in una mappa bidimensionale per comprendere prossimità e distanza emotiva.",

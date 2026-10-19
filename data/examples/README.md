@@ -42,7 +42,7 @@ Each CSV matches one result id in the decision tree. Use these files to create J
 | `structuralEquationModeling` | `structuralEquationModeling.csv` | Latent `stress` and `sleep` indicators plus observed `performance`. |
 | `discriminantAnalysis` | `discriminantAnalysis.csv` | Nominal dependent variable `group`; interval-scaled predictors `anxiety`, `motivation`, and `reaction_time`. |
 | `factorAnalysis` | `factorAnalysis.csv` | Explore factors among the stress, mood, and sleep item columns. |
-| `clusterAnalysis` | `clusterAnalysis.csv` | Cluster athletes using training load, recovery, sprint, jump, and injury variables. |
+| `clusterAnalysis` | `clusterAnalysis.csv` | Cluster athletes using training load, recovery, sprint, jump, and sleep duration. |
 | `multidimensionalScaling` | `multidimensionalScaling.csv` | Use the symmetric distance matrix among emotions for MDS. |
 | `chiSquareVariance` | `chiSquareVariance.csv` | Test the variance of `score` against a hypothesised population variance, e.g. `100`. |
 | `varianceFTest` | `varianceFTest.csv` | Compare the variance of `score` between the two levels of `group`. |

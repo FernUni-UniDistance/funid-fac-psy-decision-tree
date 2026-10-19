@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
   echo = TRUE,
   warning = FALSE,
   message = FALSE,
-  error = TRUE
+  error = FALSE
 )
 
 data_dir <- file.path("..", "data", "examples")
@@ -43,6 +43,7 @@ optional_packages <- c(
   "psych",
   "qgraph",
   "randomForest",
+  "rmdformats",
   "rpart"
 )
 
@@ -210,20 +211,15 @@ if (has_pkg("lavaan")) {
   '
 
   fit <- lavaan::sem(model, data = data)
-  summary(fit, standardized = TRUE, fit.measures = TRUE, rsquare = TRUE)
+  if (lavaan::lavInspect(fit, "converged")) {
+    print(summary(fit, standardized = TRUE, fit.measures = TRUE, rsquare = TRUE))
+    print(lavaan::parameterEstimates(fit, standardized = TRUE, ci = TRUE))
+  } else {
+    cat("This example SEM did not converge; its estimates should not be interpreted.\n")
+  }
 } else {
   message("Install lavaan to run SEM.")
 }
-
-pe <- lavaan::parameterEstimates(
-  fit,
-  standardized = TRUE,
-  ci = TRUE
-)
-
-pe
-
-
 ```
 
 ## Confirmatory factor analysis
@@ -752,7 +748,7 @@ Purpose: Use cluster analysis to group people or objects into relatively homogen
 
 ```{r cluster-analysis}
 data <- read_example("clusterAnalysis.csv")
-variables <- c("training_load", "recovery_score", "sprint_time", "jump_height", "injury_count")
+variables <- c("training_load", "recovery_score", "sprint_time", "jump_height", "sleep_time")
 
 scaled <- scale(data[, variables])
 d <- dist(scaled, method = "euclidean")
