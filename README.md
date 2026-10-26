@@ -84,9 +84,9 @@ When reporting a problem, include the selected language, decision path or proced
 
 ## Citation
 
-Until a versioned DOI is available, please cite the project as:
+Please cite the project as:
 
-> Holgado, D., & Martarelli, C. (2026). *Statistical Decision Tree* [Computer software and educational resource]. UniDistance Suisse. https://statistical-decision-tree.unidistance.ch/
+> Holgado, D., & Martarelli, C. (2026). *Statistical Decision Tree* [Computer software and educational resource]. UniDistance Suisse. https://statistical-decision-tree.unidistance.ch/. Doi: 10.5281/zenodo.23666850
 
 ## Licences
 
