@@ -1345,14 +1345,20 @@ button {
 
 .lab-footer {
   min-height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 0 18px;
+  display: grid;
+  gap: 10px;
+  padding: 12px 18px 16px;
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 12px;
+}
+
+.footer-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 20px;
 }
 
 .footer-contact {
@@ -1362,14 +1368,38 @@ button {
   white-space: nowrap;
 }
 
-.footer-contact a {
+.footer-preprint {
+  display: flex;
+  align-items: baseline;
+  gap: 8px 16px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  line-height: 1.5;
+}
+
+.footer-preprint-label {
+  flex: 0 0 auto;
+  color: var(--teal-strong);
+  font-weight: 760;
+}
+
+.footer-preprint p {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.footer-contact a,
+.footer-preprint a {
   color: var(--teal-strong);
   font-weight: 760;
   text-decoration: none;
 }
 
 .footer-contact a:hover,
-.footer-contact a:focus-visible {
+.footer-contact a:focus-visible,
+.footer-preprint a:hover,
+.footer-preprint a:focus-visible {
   color: var(--teal);
   text-decoration: underline;
   outline: none;
@@ -2006,9 +2036,18 @@ button {
   }
 
   .lab-footer {
+    padding: 10px 14px;
+  }
+
+  .footer-meta,
+  .footer-preprint {
     align-items: flex-start;
     flex-direction: column;
-    padding: 10px 14px;
+  }
+
+  .footer-contact {
+    flex-wrap: wrap;
+    white-space: normal;
   }
 }
 
